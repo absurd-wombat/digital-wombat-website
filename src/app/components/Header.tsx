@@ -12,7 +12,6 @@ export default function Header() {
                 </div>
                 <nav>
                     <ul className="flex items-center space-x-4">
-                        <li><a href="/about" className="text-2xl">About</a></li>
                         <li><a href="/contact" className="text-2xl">Contact</a></li>
                     </ul>
                 </nav>
