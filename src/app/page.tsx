@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
         <Main/>
-        <footer>
-            footer content goes here
+        <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
+            <p>&copy; {new Date().getFullYear()} My Website</p>
         </footer>
     </div>
   );
