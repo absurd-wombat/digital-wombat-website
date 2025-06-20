@@ -1,8 +1,8 @@
 import PageWrapper from "@/app/components/PageWrapper";
-import HomepageContent from "@/app/homepage/content";
+import Homepage from "@/app/homepage/Homepage";
 
 export default function Home() {
   return (
-      <PageWrapper Content={HomepageContent}/>
+      <PageWrapper Content={Homepage}/>
   )
 }

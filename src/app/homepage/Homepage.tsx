@@ -1,4 +1,4 @@
-export default function HomepageContent() {
+export default function Homepage() {
     return (
         <div>
             <section className="flex flex-col items-center justify-center text-center min-h-[60vh]">
