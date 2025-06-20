@@ -5,7 +5,7 @@ export default function Main() {
     return (
             <main className="flex-grow p-4" style={{ backgroundImage: "url(/background.jpg)", backgroundSize: 'cover' }}>
                 <Header/>
-                <section className="flex flex-col items-center justify-center text-center py-24">
+                <section className="flex flex-col items-center justify-center text-center min-h-[60vh]">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
                         Tech solutions made easy
                     </h1>
