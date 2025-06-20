@@ -4,11 +4,11 @@ type MainProps = {
     Content: React.ComponentType
 }
 
-export default function Main({Content}: MainProps) {
+export default function Main(props: MainProps) {
     return (
             <main className="flex-grow p-4" style={{ backgroundImage: "url(/background.jpg)", backgroundSize: 'cover' }}>
                 <Header/>
-                <Content/>
+                <props.Content/>
             </main>
     )
 }
