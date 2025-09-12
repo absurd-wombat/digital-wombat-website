@@ -2,7 +2,7 @@ import { SectionProps, ButtonProps, GridItem as GridItemType } from '@/app/lib/t
 
 import { getBackgroundClass, getTextColor, getDescriptionColor, getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import Button from '@/app/components/ui/Button';
-import GridItem from '@/app/components/ui/GridItem';
+import GridItem, { getGridClasses } from '@/app/components/ui/GridItem';
 
 interface HeroSectionProps extends SectionProps {
   subtitle?: string;
@@ -43,7 +43,7 @@ export default function HeroSection({
         )}
 
         {gridItems && gridItems.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className={`${getGridClasses(gridItems.length)} mb-12`}>
             {gridItems.map((item, index) => (
               <GridItem
                 key={index}
