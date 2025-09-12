@@ -1,7 +1,8 @@
-import { SectionProps, ButtonProps } from '@/app/lib/types';
+import { SectionProps, ButtonProps, GridItem as GridItemType } from '@/app/lib/types';
 
 import { getBackgroundClass, getTextColor, getDescriptionColor, getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import Button from '@/app/components/ui/Button';
+import GridItem from '@/app/components/ui/GridItem';
 
 interface HeroSectionProps extends SectionProps {
   subtitle?: string;
@@ -16,6 +17,7 @@ export default function HeroSection({
   description = "Fast, effective, and reliable development services for modern businesses",
   primaryButton,
   secondaryButton,
+  gridItems,
   fullHeight = false,
   backgroundColor = 'gradient',
   layout = 'centered',
@@ -39,6 +41,20 @@ export default function HeroSection({
             {description}
           </p>
         )}
+
+        {gridItems && gridItems.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {gridItems.map((item, index) => (
+              <GridItem
+                key={index}
+                item={item}
+                textColor={getTextColor(backgroundColor)}
+                descriptionColor={getDescriptionColor(backgroundColor)}
+              />
+            ))}
+          </div>
+        )}
+
         {(primaryButton || secondaryButton) && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {primaryButton && <Button {...primaryButton} />}
