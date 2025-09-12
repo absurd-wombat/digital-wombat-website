@@ -1,4 +1,5 @@
 import ContentSection from '../components/ContentSection';
+import HeroSection from '../components/HeroSection';
 
 const contactData = [
     {
@@ -25,12 +26,14 @@ const contactData = [
 
 export default function Contact() {
     return (
-        <ContentSection 
-          title="Get In Touch"
-          description="Ready to bring your ideas to life? We'd love to hear about your project and discuss how we can help you achieve your goals. Reach out to us through any of the channels below."
-          gridItems={contactData}
-          backgroundColor="indigo"
-          maxWidth="4xl"
+        <HeroSection
+            title="Get In Touch"
+            subtitle="Let's discuss your next project"
+            description="Ready to bring your ideas to life? We're here to help with innovative solutions tailored to your needs."
+            primaryButtonText="Send Message"
+            primaryButtonHref="#contact-form"
+            secondaryButtonText="View Portfolio"
+            secondaryButtonHref="/portfolio"
         />
     );
 }
