@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-interface CTASectionProps {
+interface ContactUsSectionProps {
   title?: string;
   description?: string;
   primaryButtonText?: string;
@@ -9,14 +9,14 @@ interface CTASectionProps {
   secondaryButtonHref?: string;
 }
 
-export default function CTASection({
+export default function ContactUsSection({
   title = "Ready to Start Your Project?",
   description = "Let's discuss how we can help bring your vision to life with innovative technology solutions.",
   primaryButtonText = "View Our Work",
   primaryButtonHref = "/portfolio",
-  secondaryButtonText = "Start a Conversation",
+  secondaryButtonText = "Contact Us",
   secondaryButtonHref = "/contact"
-}: CTASectionProps) {
+}: ContactUsSectionProps) {
   return (
     <section className="py-20 bg-indigo-600">
       <div className="max-w-4xl mx-auto px-6 text-center">

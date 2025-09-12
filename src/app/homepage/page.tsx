@@ -1,7 +1,7 @@
 import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
 import AboutSection from '../components/AboutSection';
-import CTASection from '../components/CTASection';
+import ContactUsSection from '../components/ContactUsSection';
 
 export default function Homepage() {
   return (
@@ -9,7 +9,7 @@ export default function Homepage() {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
-      <CTASection />
+      <ContactUsSection />
     </div>
   );
 }
