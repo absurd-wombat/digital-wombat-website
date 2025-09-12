@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ContentSection from './ContentSection';
 
 interface ContactUsSectionProps {
   title?: string;
@@ -17,30 +17,18 @@ export default function ContactUsSection({
   secondaryButtonText = "Contact Us",
   secondaryButtonHref = "/contact"
 }: ContactUsSectionProps) {
+  const buttons = [
+    { text: primaryButtonText, href: primaryButtonHref, variant: 'primary' as const },
+    { text: secondaryButtonText, href: secondaryButtonHref, variant: 'secondary' as const }
+  ];
+
   return (
-    <section className="py-20 bg-indigo-600">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-          {title}
-        </h2>
-        <p className="text-xl text-indigo-100 mb-12 max-w-2xl mx-auto">
-          {description}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
-            href={primaryButtonHref} 
-            className="bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            {primaryButtonText}
-          </Link>
-          <Link 
-            href={secondaryButtonHref} 
-            className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors"
-          >
-            {secondaryButtonText}
-          </Link>
-        </div>
-      </div>
-    </section>
+    <ContentSection 
+      type="cta"
+      title={title}
+      description={description}
+      buttons={buttons}
+      backgroundColor="indigo"
+    />
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface Service {
   icon: React.ReactNode;
@@ -11,13 +12,20 @@ interface Stat {
   label: string;
 }
 
+interface Button {
+  text: string;
+  href: string;
+  variant: 'primary' | 'secondary';
+}
+
 interface ContentSectionProps {
-  type: 'services' | 'about';
+  type: 'services' | 'about' | 'cta';
   title: string;
   description?: string;
   services?: Service[];
   stats?: Stat[];
-  backgroundColor?: 'white' | 'gray';
+  buttons?: Button[];
+  backgroundColor?: 'white' | 'gray' | 'indigo';
 }
 
 const defaultServices: Service[] = [
@@ -56,21 +64,41 @@ const defaultStats: Stat[] = [
   { value: "24/7", label: "Support Available" }
 ];
 
+const defaultButtons: Button[] = [
+  { text: "View Our Work", href: "/portfolio", variant: "primary" },
+  { text: "Contact Us", href: "/contact", variant: "secondary" }
+];
+
 export default function ContentSection({
   type,
   title,
   description,
   services = defaultServices,
   stats = defaultStats,
+  buttons = defaultButtons,
   backgroundColor = 'white'
 }: ContentSectionProps) {
-  const bgClass = backgroundColor === 'gray' ? 'bg-gray-50' : 'bg-white';
+  const getBackgroundClass = () => {
+    switch (backgroundColor) {
+      case 'gray': return 'bg-gray-50';
+      case 'indigo': return 'bg-indigo-600';
+      default: return 'bg-white';
+    }
+  };
+
+  const getTextColor = () => {
+    return backgroundColor === 'indigo' ? 'text-white' : 'text-gray-800';
+  };
+
+  const getDescriptionColor = () => {
+    return backgroundColor === 'indigo' ? 'text-indigo-100' : 'text-gray-600';
+  };
 
   if (type === 'services') {
     return (
-      <section className={`py-20 ${bgClass}`}>
+      <section className={`py-20 ${getBackgroundClass()}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className={`text-4xl md:text-5xl font-bold text-center mb-16 ${getTextColor()}`}>
             {title}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -79,8 +107,8 @@ export default function ContentSection({
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h3>
-                <p className="text-gray-600">
+                <h3 className={`text-2xl font-bold mb-4 ${getTextColor()}`}>{service.title}</h3>
+                <p className={getDescriptionColor()}>
                   {service.description}
                 </p>
               </div>
@@ -93,13 +121,13 @@ export default function ContentSection({
 
   if (type === 'about') {
     return (
-      <section className={`py-20 ${bgClass}`}>
+      <section className={`py-20 ${getBackgroundClass()}`}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor()}`}>
             {title}
           </h2>
           {description && (
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className={`text-xl mb-8 leading-relaxed ${getDescriptionColor()}`}>
               {description}
             </p>
           )}
@@ -107,8 +135,40 @@ export default function ContentSection({
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-bold text-indigo-600 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className={getDescriptionColor()}>{stat.label}</div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (type === 'cta') {
+    return (
+      <section className={`py-20 ${getBackgroundClass()}`}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor()}`}>
+            {title}
+          </h2>
+          {description && (
+            <p className={`text-xl mb-12 max-w-2xl mx-auto ${getDescriptionColor()}`}>
+              {description}
+            </p>
+          )}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {buttons.map((button, index) => (
+              <Link 
+                key={index}
+                href={button.href} 
+                className={
+                  button.variant === 'primary' 
+                    ? "bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+                    : "border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors"
+                }
+              >
+                {button.text}
+              </Link>
             ))}
           </div>
         </div>
