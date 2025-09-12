@@ -12,10 +12,7 @@ export default function ContentSection({
   layout = 'centered',
   maxWidth = '6xl',
   className
-}: SectionProps & {
-  gridItems?: GridItemType[];
-  buttons?: ButtonProps[];
-}) {
+}: SectionProps) {
   return (
     <section className={`py-20 ${getBackgroundClass(backgroundColor)} ${className || ''}`}>
       <div className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}>
