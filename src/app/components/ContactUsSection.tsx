@@ -24,11 +24,11 @@ export default function ContactUsSection({
 
   return (
     <ContentSection 
-      type="cta"
       title={title}
       description={description}
       buttons={buttons}
       backgroundColor="indigo"
+      maxWidth="4xl"
     />
   );
 }

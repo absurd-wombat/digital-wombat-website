@@ -33,9 +33,9 @@ const servicesData = [
 export default function ServicesSection() {
   return (
     <ContentSection 
-      type="services"
       title="What We Do"
-      services={servicesData}
+      gridItems={servicesData}
+      maxWidth="6xl"
     />
   );
 }

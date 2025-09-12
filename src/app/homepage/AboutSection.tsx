@@ -9,11 +9,11 @@ const statsData = [
 export default function AboutSection() {
   return (
     <ContentSection 
-      type="about"
       title="About Digital Wombat"
       description="We're passionate about creating digital solutions that make a difference. With expertise in modern web technologies and a focus on user experience, we help businesses and individuals bring their ideas to life."
-      stats={statsData}
+      gridItems={statsData}
       backgroundColor="gray"
+      maxWidth="4xl"
     />
   );
 }

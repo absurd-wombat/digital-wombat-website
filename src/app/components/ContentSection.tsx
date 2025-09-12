@@ -1,15 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface Service {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface Stat {
-  value: string;
-  label: string;
+interface GridItem {
+  icon?: React.ReactNode | string;
+  title?: string;
+  value?: string;
+  description?: string;
+  label?: string;
 }
 
 interface Button {
@@ -19,50 +16,14 @@ interface Button {
 }
 
 interface ContentSectionProps {
-  type: 'services' | 'about' | 'cta';
   title: string;
   description?: string;
-  services?: Service[];
-  stats?: Stat[];
+  gridItems?: GridItem[];
   buttons?: Button[];
   backgroundColor?: 'white' | 'gray' | 'indigo';
+  layout?: 'centered' | 'left-aligned';
+  maxWidth?: '4xl' | '6xl' | 'full';
 }
-
-const defaultServices: Service[] = [
-  {
-    icon: (
-      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
-    title: "Web Development",
-    description: "Modern, responsive websites and web applications built with cutting-edge technologies"
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: "Mobile Apps",
-    description: "Cross-platform mobile applications that deliver exceptional user experiences"
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Tech Consulting",
-    description: "Strategic technology guidance to help your business grow and scale efficiently"
-  }
-];
-
-const defaultStats: Stat[] = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "100%", label: "Client Satisfaction" },
-  { value: "24/7", label: "Support Available" }
-];
 
 const defaultButtons: Button[] = [
   { text: "View Our Work", href: "/portfolio", variant: "primary" },
@@ -70,13 +31,13 @@ const defaultButtons: Button[] = [
 ];
 
 export default function ContentSection({
-  type,
   title,
   description,
-  services = defaultServices,
-  stats = defaultStats,
+  gridItems,
   buttons = defaultButtons,
-  backgroundColor = 'white'
+  backgroundColor = 'white',
+  layout = 'centered',
+  maxWidth = '6xl'
 }: ContentSectionProps) {
   const getBackgroundClass = () => {
     switch (backgroundColor) {
@@ -94,87 +55,99 @@ export default function ContentSection({
     return backgroundColor === 'indigo' ? 'text-indigo-100' : 'text-gray-600';
   };
 
-  if (type === 'services') {
-    return (
-      <section className={`py-20 ${getBackgroundClass()}`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className={`text-4xl md:text-5xl font-bold text-center mb-16 ${getTextColor()}`}>
-            {title}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  {service.icon}
-                </div>
-                <h3 className={`text-2xl font-bold mb-4 ${getTextColor()}`}>{service.title}</h3>
-                <p className={getDescriptionColor()}>
-                  {service.description}
-                </p>
+  const getMaxWidthClass = () => {
+    switch (maxWidth) {
+      case '4xl': return 'max-w-4xl';
+      case '6xl': return 'max-w-6xl';
+      case 'full': return 'max-w-full';
+      default: return 'max-w-6xl';
+    }
+  };
+
+  const getLayoutClass = () => {
+    return layout === 'centered' ? 'text-center' : 'text-left';
+  };
+
+  const getButtonClasses = (variant: 'primary' | 'secondary') => {
+    const baseClasses = "px-8 py-3 rounded-lg font-semibold transition-all duration-200 inline-block text-center";
+    
+    if (backgroundColor === 'indigo') {
+      return variant === 'primary' 
+        ? `${baseClasses} bg-white text-indigo-600 hover:bg-gray-100 hover:scale-105`
+        : `${baseClasses} border-2 border-white text-white hover:bg-white hover:text-indigo-600`;
+    }
+    
+    return variant === 'primary'
+      ? `${baseClasses} bg-indigo-600 text-white hover:bg-indigo-700 hover:scale-105`
+      : `${baseClasses} border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white`;
+  };
+
+  return (
+    <section className={`py-20 ${getBackgroundClass()}`}>
+      <div className={`${getMaxWidthClass()} mx-auto px-6 ${getLayoutClass()}`}>
+        {/* Title */}
+        <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor()}`}>
+          {title}
+        </h2>
+
+        {/* Description */}
+        {description && (
+          <p className={`text-xl mb-12 leading-relaxed ${getDescriptionColor()}`}>
+            {description}
+          </p>
+        )}
+
+        {/* Optional Grid */}
+        {gridItems && gridItems.length > 0 && (
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {gridItems.map((item, index) => (
+              <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+                {/* Icon */}
+                {item.icon && (
+                  <div className="mb-6">
+                    {typeof item.icon === 'string' ? (
+                      <div className="text-4xl">{item.icon}</div>
+                    ) : (
+                      <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+                        {item.icon}
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                {/* Title or Value */}
+                {(item.title || item.value) && (
+                  <div className={`text-2xl font-bold mb-4 ${getTextColor()}`}>
+                    {item.title || item.value}
+                  </div>
+                )}
+                
+                {/* Description or Label */}
+                {(item.description || item.label) && (
+                  <div className={getDescriptionColor()}>
+                    {item.description || item.label}
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </div>
-      </section>
-    );
-  }
+        )}
 
-  if (type === 'about') {
-    return (
-      <section className={`py-20 ${getBackgroundClass()}`}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor()}`}>
-            {title}
-          </h2>
-          {description && (
-            <p className={`text-xl mb-8 leading-relaxed ${getDescriptionColor()}`}>
-              {description}
-            </p>
-          )}
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-indigo-600 mb-2">{stat.value}</div>
-                <div className={getDescriptionColor()}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (type === 'cta') {
-    return (
-      <section className={`py-20 ${getBackgroundClass()}`}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor()}`}>
-            {title}
-          </h2>
-          {description && (
-            <p className={`text-xl mb-12 max-w-2xl mx-auto ${getDescriptionColor()}`}>
-              {description}
-            </p>
-          )}
+        {/* Buttons */}
+        {buttons && buttons.length > 0 && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {buttons.map((button, index) => (
-              <Link 
+              <Link
                 key={index}
-                href={button.href} 
-                className={
-                  button.variant === 'primary' 
-                    ? "bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-                    : "border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors"
-                }
+                href={button.href}
+                className={getButtonClasses(button.variant)}
               >
                 {button.text}
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-    );
-  }
-
-  return null;
+        )}
+      </div>
+    </section>
+  );
 }
