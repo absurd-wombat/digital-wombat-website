@@ -1,5 +1,5 @@
 import HeroSection from '@/app/components/sections/HeroSection';
-import { contactInfo } from '@/app/data/contact';
+import { contactInfo } from '@/app/lib/data/contact';
 import { GridItem } from '@/app/lib/types';
 
 export default function Contact() {
