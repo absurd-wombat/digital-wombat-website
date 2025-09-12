@@ -1,5 +1,5 @@
-import ContentSection from '../components/ContentSection';
-import HeroSection from '../components/HeroSection';
+import ContentSection from '../components/sections/ContentSection';
+import HeroSection from '../components/sections/HeroSection';
 
 const contactData = [
     {

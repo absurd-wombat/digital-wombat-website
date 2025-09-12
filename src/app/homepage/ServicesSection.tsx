@@ -1,4 +1,4 @@
-import ContentSection from '../components/ContentSection';
+import ContentSection from '../components/sections/ContentSection';
 
 const servicesData = [
   {

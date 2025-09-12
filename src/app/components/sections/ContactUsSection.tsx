@@ -1,4 +1,5 @@
-import ContentSection from './ContentSection';
+import ContentSection from '@/app/components/sections/ContentSection';
+
 
 interface ContactUsSectionProps {
   title?: string;
