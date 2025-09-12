@@ -1,6 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+// Define the navigation items
+const navigationItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Contact', href: '/contact' },
+]
+
 export default function Header() {
     return (
         <div>
@@ -8,13 +15,22 @@ export default function Header() {
                 <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                     <Image src={"/wombat.svg"} width={100} height={100} alt="logo"/>
                     <h1 className="text-5xl font-bold ml-4">
-                        digital wombat
+                        Digital Wombat
                     </h1>
                 </Link>
                 
                 <nav>
-                    <ul className="flex items-center space-x-4">
-                        <li><a href="/contact" className="text-2xl">Contact</a></li>
+                    <ul className="flex items-center space-x-6">
+                        {navigationItems.map((item) => (
+                            <li key={item.name}>
+                                <Link 
+                                    href={item.href} 
+                                    className="text-2xl hover:text-blue-600 transition-colors duration-200"
+                                >
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </header>
