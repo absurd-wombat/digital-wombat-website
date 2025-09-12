@@ -1,8 +1,10 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "@/app/components/layout/Header";
+import Footer from "@/app/components/layout/Footer";
+import { COMPANY_INFO } from "@/app/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Wombat - Innovative Tech Solutions",
-  description: "Fast, effective, and reliable development services for modern businesses",
+  title: `${COMPANY_INFO.name} - ${COMPANY_INFO.tagline}`,
+  description: COMPANY_INFO.description,
 };
 
 export default function RootLayout({

@@ -1,7 +1,3 @@
-
-
-
-// src/lib/utils.ts
 export function getButtonClasses(variant: string, backgroundColor?: string): string {
     const baseClasses = "px-8 py-3 rounded-lg font-semibold transition-all duration-200 inline-block text-center";
     

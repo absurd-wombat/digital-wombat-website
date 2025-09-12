@@ -1,27 +1,21 @@
-import ContentSection from '@/app/components/sections/ContentSection';
-
+// src/app/components/ContactUsSection.tsx
+import ContentSection from './ContentSection';
+import { ButtonProps } from '@/app/lib/types';
 
 interface ContactUsSectionProps {
   title?: string;
   description?: string;
-  primaryButtonText?: string;
-  primaryButtonHref?: string;
-  secondaryButtonText?: string;
-  secondaryButtonHref?: string;
+  primaryButton?: ButtonProps;
+  secondaryButton?: ButtonProps;
 }
 
 export default function ContactUsSection({
   title = "Ready to Start Your Project?",
   description = "Let's discuss how we can help bring your vision to life with innovative technology solutions.",
-  primaryButtonText = "View Our Work",
-  primaryButtonHref = "/portfolio",
-  secondaryButtonText = "Contact Us",
-  secondaryButtonHref = "/contact"
+  primaryButton = { text: "View Our Work", href: "/portfolio", variant: "primary" },
+  secondaryButton = { text: "Contact Us", href: "/contact", variant: "secondary" }
 }: ContactUsSectionProps) {
-  const buttons = [
-    { text: primaryButtonText, href: primaryButtonHref, variant: 'primary' as const },
-    { text: secondaryButtonText, href: secondaryButtonHref, variant: 'secondary' as const }
-  ];
+  const buttons = [primaryButton, secondaryButton];
 
   return (
     <ContentSection 

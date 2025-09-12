@@ -1,7 +1,3 @@
-
-
-
-// src/lib/types.ts
 export interface NavigationItem {
     name: string;
     href: string;
@@ -31,12 +27,7 @@ export interface NavigationItem {
     className?: string;
   }
   
-  export interface HeroSectionProps extends SectionProps {
-    subtitle?: string;
-    primaryButton?: ButtonProps;
-    secondaryButton?: ButtonProps;
-    fullHeight?: boolean;
-  }
+
   
   export interface Project {
     id: string;
@@ -52,3 +43,17 @@ export interface NavigationItem {
     value: string;
     label: string;
   }
+
+// Navigation items for the header
+export const NAVIGATION_ITEMS: NavigationItem[] = [
+  { name: 'Home', href: '/' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Contact', href: '/contact' },
+];
+
+// Company information
+export const COMPANY_INFO = {
+  name: 'Absurd Wombat',
+  tagline: "tmp-tagline",
+  description: "tmp-descripton"
+};

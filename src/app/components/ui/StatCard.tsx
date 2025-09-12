@@ -1,5 +1,4 @@
-// src/components/ui/StatCard.tsx
-import { Stat } from '@/lib/types';
+import { Stat } from '@/app/lib/types';
 
 interface StatCardProps {
   stat: Stat;
@@ -13,5 +12,4 @@ export default function StatCard({ stat }: StatCardProps) {
     </div>
   );
 }
-```
 
