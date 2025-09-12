@@ -8,6 +8,7 @@ interface HeroSectionProps {
   primaryButtonHref?: string;
   secondaryButtonText?: string;
   secondaryButtonHref?: string;
+  fullHeight?: boolean; // New prop
 }
 
 export default function HeroSection({
@@ -17,10 +18,13 @@ export default function HeroSection({
   primaryButtonText = "View Portfolio",
   primaryButtonHref = "/portfolio",
   secondaryButtonText = "Get In Touch",
-  secondaryButtonHref = "/contact"
+  secondaryButtonHref = "/contact",
+  fullHeight = false // Default to false
 }: HeroSectionProps) {
   return (
-    <section className="flex flex-col items-center justify-center text-center min-h-[80vh] bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section className={`flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-50 to-indigo-100 ${
+      fullHeight ? 'min-h-[calc(100vh-8rem)]' : 'min-h-[80vh]'
+    }`}>
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-800">
           {title}

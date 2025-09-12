@@ -34,6 +34,7 @@ export default function Contact() {
             primaryButtonHref="#contact-form"
             secondaryButtonText="View Portfolio"
             secondaryButtonHref="/portfolio"
+            fullHeight={true}
         />
     );
 }
