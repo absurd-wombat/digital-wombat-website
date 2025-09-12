@@ -14,7 +14,7 @@ export default function GridItem({ item, textColor, descriptionColor }: GridItem
           {typeof item.icon === 'string' ? (
             <div className="text-4xl">{item.icon}</div>
           ) : (
-            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto text-indigo-600">
               {item.icon}
             </div>
           )}

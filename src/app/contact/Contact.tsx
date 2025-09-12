@@ -1,6 +1,6 @@
 import HeroSection from '@/app/components/sections/HeroSection';
 import { contactInfo } from '@/app/data/contact';
-import { ButtonProps, GridItem } from '@/app/lib/types';
+import { GridItem } from '@/app/lib/types';
 
 const contactMetadata = {
     email: {
