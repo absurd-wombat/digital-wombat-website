@@ -2,14 +2,7 @@ import HeroSection from '@/app/components/sections/HeroSection';
 import { contactInfo } from '@/app/data/contact';
 import { ButtonProps, GridItem } from '@/app/lib/types';
 
-export default function Contact() {
-  const buttons: ButtonProps[] = [
-    { text: "Send Message", href: "#contact-form", variant: "primary" },
-    { text: "View Portfolio", href: "/portfolio", variant: "secondary" }
-  ];
-
-  // Contact metadata for generating GridItems
-  const contactMetadata = {
+const contactMetadata = {
     email: {
       title: "Email",
       description: "Get in touch via email",
@@ -32,6 +25,7 @@ export default function Contact() {
     }
   };
 
+export default function Contact() {
   const contactData: GridItem[] = Object.entries(contactInfo).map(([key, value]) => ({
     icon: contactMetadata[key as keyof typeof contactMetadata].icon,
     title: contactMetadata[key as keyof typeof contactMetadata].title,
@@ -40,14 +34,12 @@ export default function Contact() {
   }));
 
   return (
-    <div className="min-h-screen">
+    <div>
       <HeroSection
         title="Get In Touch"
         subtitle="Let's discuss your next project"
         description="Ready to bring your ideas to life? We're here to help with innovative solutions tailored to your needs."
         gridItems={contactData}
-        primaryButton={buttons[0]}
-        secondaryButton={buttons[1]}
         fullHeight={true}
         backgroundColor="gradient"
         maxWidth="6xl"
