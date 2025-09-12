@@ -25,16 +25,11 @@ interface ContentSectionProps {
   maxWidth?: '4xl' | '6xl' | 'full';
 }
 
-const defaultButtons: Button[] = [
-  { text: "View Our Work", href: "/portfolio", variant: "primary" },
-  { text: "Contact Us", href: "/contact", variant: "secondary" }
-];
-
 export default function ContentSection({
   title,
   description,
   gridItems,
-  buttons = defaultButtons,
+  buttons,
   backgroundColor = 'white',
   layout = 'centered',
   maxWidth = '6xl'
@@ -99,7 +94,7 @@ export default function ContentSection({
 
         {/* Optional Grid */}
         {gridItems && gridItems.length > 0 && (
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {gridItems.map((item, index) => (
               <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
                 {/* Icon */}
@@ -132,6 +127,7 @@ export default function ContentSection({
             ))}
           </div>
         )}
+
 
         {/* Buttons */}
         {buttons && buttons.length > 0 && (
