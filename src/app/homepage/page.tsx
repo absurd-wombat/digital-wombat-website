@@ -1,6 +1,6 @@
 import HeroSection from '../components/HeroSection';
-import ServicesSection from '../components/ServicesSection';
-import AboutSection from '../components/AboutSection';
+import ServicesSection from './ServicesSection';
+import AboutSection from './AboutSection';
 import ContactUsSection from '../components/ContactUsSection';
 
 export default function Homepage() {
