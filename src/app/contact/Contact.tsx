@@ -1,5 +1,4 @@
 import HeroSection from '@/app/components/sections/HeroSection';
-import ContentSection from '@/app/components/sections/ContentSection';
 import { contactInfo } from '@/app/data/contact';
 import { ButtonProps, GridItem } from '@/app/lib/types';
 
@@ -42,15 +41,12 @@ export default function Contact() {
         title="Get In Touch"
         subtitle="Let's discuss your next project"
         description="Ready to bring your ideas to life? We're here to help with innovative solutions tailored to your needs."
+        gridItems={contactData}
         primaryButton={buttons[0]}
         secondaryButton={buttons[1]}
         fullHeight={true}
-      />
-      
-      <ContentSection
-        title="Contact Information"
-        gridItems={contactData}
-        maxWidth="4xl"
+        backgroundColor="gradient"
+        maxWidth="6xl"
       />
     </div>
   );
