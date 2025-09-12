@@ -31,14 +31,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main 
-            className="flex-grow p-4" 
-            style={{ 
-              backgroundImage: "url(/background.jpg)", 
-              backgroundSize: 'cover',
-              backgroundAttachment: 'fixed'
-            }}
-          >
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />
