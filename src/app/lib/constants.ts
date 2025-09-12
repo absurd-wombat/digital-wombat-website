@@ -54,6 +54,6 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 // Company information
 export const COMPANY_INFO = {
   name: 'Absurd Wombat',
-  tagline: "tmp-tagline",
-  description: "tmp-descripton"
+  tagline: "Innovative tech solutions that transform ideas into reality",
+  description: "Fast, effective, and reliable development services for modern businesses"
 };
