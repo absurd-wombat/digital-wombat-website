@@ -23,7 +23,7 @@ export default function HeroSection({
   layout = 'centered',
   maxWidth = '4xl'
 }: HeroSectionProps) {
-  const heightClass = fullHeight ? 'min-h-[calc(100vh-8rem)]' : 'min-h-[60vh]';
+  const heightClass = fullHeight ? 'min-h-[calc(100vh-10rem)]' : 'min-h-[60vh]';
   
   return (
     <section className={`flex flex-col items-center justify-center ${getBackgroundClass(backgroundColor)} ${heightClass}`}>
