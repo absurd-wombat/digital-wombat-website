@@ -4,6 +4,18 @@ import { getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import GridItem from '@/app/components/ui/GridItem';
 import Button from '@/app/components/ui/Button';
 
+type DetailObject = { category: string; items: string[] };
+
+function isDetailObject(detail: unknown): detail is DetailObject {
+  return (
+    typeof detail === 'object' &&
+    detail !== null &&
+    'category' in detail &&
+    'items' in detail &&
+    Array.isArray((detail as DetailObject).items)
+  );
+}
+
 export default function ContentSection({
   title,
   description,
@@ -40,11 +52,28 @@ export default function ContentSection({
                 {card.subtitle && <div className={`${colors.text.cardSubtitle} mb-1`}>{card.subtitle}</div>}
                 {card.description && <div className={`text-sm ${colors.text.cardDescription} mb-1`}>{card.description}</div>}
                 {card.details && Array.isArray(card.details) && card.details.length > 0 && (
-                  <ul className="list-disc list-inside mt-4 space-y-2">
-                    {card.details.map((detail, i) => (
-                      <li key={i} className={colors.text.cardDetail}>{detail}</li>
-                    ))}
-                  </ul>
+                  <div className="mt-4 space-y-4">
+                    {card.details.map((detail: DetailObject | string | React.ReactNode, i: number) => {
+                      if (isDetailObject(detail)) {
+                        return (
+                          <div key={i}>
+                            <span className={`font-semibold ${colors.text.cardDetail}`}>{detail.category}:</span>
+                            {detail.items.length > 0 && (
+                              <ul className="list-disc list-inside ml-6 mt-2">
+                                {detail.items.map((item: string, j: number) => (
+                                  <li key={j} className={colors.text.cardDetail}>{item}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div key={i} className={colors.text.cardDetail}>{detail}</div>
+                        );
+                      }
+                    })}
+                  </div>
                 )}
                 {card.details && !Array.isArray(card.details) && (
                   <div className={`mt-4 ${colors.text.cardDetail}`}>{card.details}</div>
