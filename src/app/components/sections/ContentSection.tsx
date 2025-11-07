@@ -32,8 +32,8 @@ export default function ContentSection({
         {variant === 'card' && cardItems && cardItems.length > 0 && (
           <div className="max-w-6xl mx-auto flex flex-col gap-8 mb-12">
             {cardItems.map((card, index) => (
-              <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-7xl mx-auto`}>
-                <div className="flex items-center mb-2">
+              <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-7xl mx-auto text-left`}>
+                <div className="flex items-center mb-2 justify-start">
                   {card.icon && <span className="text-3xl mr-3">{card.icon}</span>}
                   <span className={`text-xl font-semibold ${colors.text.cardTitle}`}>{card.title}</span>
                 </div>
