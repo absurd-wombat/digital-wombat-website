@@ -6,7 +6,6 @@ export const colors = {
     section: {
       white: 'bg-white',
       gray: 'bg-gray-100',
-      blue: 'bg-blue-50',
       dark: 'bg-gray-900',
       indigo: 'bg-indigo-50',
       gradient: 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
@@ -28,4 +27,3 @@ export const colors = {
     card: 'border-gray-200',
   },
 };
-
