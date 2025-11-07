@@ -1,7 +1,6 @@
 import ContentSection from '@/app/components/sections/ContentSection';
 
 export default function AboutUs() {
-    // Work Experience data
     const workExperience = [
         {
             icon: '💼',
@@ -59,27 +58,7 @@ export default function AboutUs() {
         },
     ];
 
-    const workExperienceCards = workExperience.map(role => ({
-        icon: role.icon,
-        title: role.title,
-        subtitle: `${role.company}${role.location ? ` · ${role.location}` : ''}`,
-        description: role.period,
-        details: role.details.length > 0
-            ? role.details.map(detail => (
-                <div key={detail.category}>
-                    <span className="font-semibold">{detail.category}:</span>
-                    <ul className="list-disc ml-6">
-                        {detail.items.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))
-            : undefined
-    }));
-
-    // Education data
-    const rawEducation = [
+    const Education = [
         {
             icon: '🎓',
             title: 'MPhys Physics',
@@ -115,25 +94,6 @@ export default function AboutUs() {
         }
     ];
 
-    const educationCards = rawEducation.map(edu => ({
-        icon: edu.icon,
-        title: edu.title,
-        subtitle: edu.subtitle,
-        description: edu.description,
-        details: edu.details.length > 0
-            ? edu.details.map(detail => (
-                <div key={detail.category}>
-                    <span className="font-semibold">{detail.category}:</span>
-                    <ul className="list-disc ml-6">
-                        {detail.items.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))
-            : undefined
-    }));
-
     return (
         <div className="min-h-screen">
             <ContentSection
@@ -142,7 +102,7 @@ export default function AboutUs() {
                 layout="centered"
                 maxWidth="7xl"
                 variant="card"
-                cardItems={workExperienceCards}
+                cards={workExperience}
             />
             <ContentSection
                 title="Education"
@@ -150,7 +110,7 @@ export default function AboutUs() {
                 layout="centered"
                 maxWidth="7xl"
                 variant="card"
-                cardItems={educationCards}
+                cards={Education}
             />
         </div>
     );

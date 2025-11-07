@@ -16,18 +16,65 @@ function isDetailObject(detail: unknown): detail is DetailObject {
   );
 }
 
+export function buildCardItems(raw: Array<{
+    icon: string;
+    title: string;
+    subtitle?: string;
+    company?: string;
+    period?: string;
+    location?: string;
+    description?: string;
+    details: Array<{ category: string; items: string[] }>;
+}>) {
+    return raw.map(item => ({
+        icon: item.icon,
+        title: item.title,
+        subtitle: item.subtitle || `${item.company || ''}${item.location ? ` · ${item.location}` : ''}`,
+        description: item.description || item.period || '',
+        details: item.details.length > 0
+            ? item.details.map(detail => (
+                <div key={detail.category}>
+                    <span className={`font-semibold ${colors.text.cardDetail}`}>{detail.category}:</span>
+                    <ul className="list-disc ml-6">
+                        {detail.items.map((entry, idx) => (
+                            <li key={idx} className={colors.text.cardDetail}>{entry}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+            : undefined
+    }));
+}
+
+interface RawCard {
+  icon: string;
+  title: string;
+  subtitle?: string;
+  company?: string;
+  period?: string;
+  location?: string;
+  description?: string;
+  details: Array<{ category: string; items: string[] }>;
+}
+
+interface ContentSectionProps extends Omit<SectionProps, 'cardItems'> {
+  cards?: RawCard[];
+}
+
 export default function ContentSection({
   title,
   description,
   gridItems,
   buttons,
-  cardItems,
+  cards,
   variant,
   backgroundColor = 'white',
   layout = 'centered',
   maxWidth = '6xl',
   className
-}: SectionProps) {
+}: ContentSectionProps) {
+  const displayCardItems = cards ? buildCardItems(cards) : undefined;
+
   return (
     <section className={`py-20 ${colors.background.section[backgroundColor] || colors.background.default} ${className || ''}`}>
       <div className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}>
@@ -41,9 +88,9 @@ export default function ContentSection({
           </p>
         )}
 
-        {variant === 'card' && cardItems && cardItems.length > 0 && (
+        {variant === 'card' && displayCardItems && displayCardItems.length > 0 && (
           <div className="max-w-6xl mx-auto flex flex-col gap-8 mb-12">
-            {cardItems.map((card, index) => (
+            {displayCardItems.map((card, index) => (
               <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-7xl mx-auto text-left`}>
                 <div className="flex items-center mb-2 justify-start">
                   {card.icon && <span className="text-3xl mr-3">{card.icon}</span>}
