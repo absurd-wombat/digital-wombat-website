@@ -48,7 +48,6 @@ export interface NavigationItem {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about-us' },
-  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Contact', href: '/contact' },
 ];
 
