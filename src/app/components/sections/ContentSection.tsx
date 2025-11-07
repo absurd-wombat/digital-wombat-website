@@ -1,4 +1,5 @@
 import { SectionProps } from '@/app/lib/types';
+import { colors } from '@/app/lib/colors';
 import { getBackgroundClass, getTextColor, getDescriptionColor, getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import GridItem from '@/app/components/ui/GridItem';
 import Button from '@/app/components/ui/Button';
@@ -16,37 +17,37 @@ export default function ContentSection({
   className
 }: SectionProps) {
   return (
-    <section className={`py-20 ${getBackgroundClass(backgroundColor)} ${className || ''}`}>
+    <section className={`py-20 ${colors.background.section[backgroundColor] || colors.background.default} ${className || ''}`}>
       <div className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}>
-        <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${getTextColor(backgroundColor)}`}>
+        <h2 className={`text-4xl md:text-5xl font-bold mb-8 ${colors.text.heading}`}>
           {title}
         </h2>
 
         {description && (
-          <p className={`text-xl mb-12 leading-relaxed ${getDescriptionColor(backgroundColor)}`}>
+          <p className={`text-xl mb-12 leading-relaxed ${colors.text.description}`}>
             {description}
           </p>
         )}
 
         {variant === 'card' && cardItems && cardItems.length > 0 && (
-          <div className="flex flex-col gap-8 mb-12">
+          <div className="max-w-6xl mx-auto flex flex-col gap-8 mb-12">
             {cardItems.map((card, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg shadow p-6">
+              <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-2xl mx-auto`}>
                 <div className="flex items-center mb-2">
                   {card.icon && <span className="text-3xl mr-3">{card.icon}</span>}
-                  <span className="text-xl font-semibold">{card.title}</span>
+                  <span className={`text-xl font-semibold ${colors.text.cardTitle}`}>{card.title}</span>
                 </div>
-                {card.subtitle && <div className="text-gray-700 mb-1">{card.subtitle}</div>}
-                {card.description && <div className="text-sm text-gray-500 mb-1">{card.description}</div>}
+                {card.subtitle && <div className={`${colors.text.cardSubtitle} mb-1`}>{card.subtitle}</div>}
+                {card.description && <div className={`text-sm ${colors.text.cardDescription} mb-1`}>{card.description}</div>}
                 {card.details && Array.isArray(card.details) && card.details.length > 0 && (
                   <ul className="list-disc list-inside mt-4 space-y-2">
                     {card.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
+                      <li key={i} className={colors.text.cardDetail}>{detail}</li>
                     ))}
                   </ul>
                 )}
                 {card.details && !Array.isArray(card.details) && (
-                  <div className="mt-4">{card.details}</div>
+                  <div className={`mt-4 ${colors.text.cardDetail}`}>{card.details}</div>
                 )}
               </div>
             ))}
@@ -60,8 +61,8 @@ export default function ContentSection({
               <GridItem
                 key={index}
                 item={item}
-                textColor={getTextColor(backgroundColor)}
-                descriptionColor={getDescriptionColor(backgroundColor)}
+                textColor={colors.text.default}
+                descriptionColor={colors.text.description}
               />
             ))}
           </div>

@@ -105,7 +105,6 @@ export default function AboutUs() {
 
     return (
         <div className="min-h-screen">
-            {/* Work Experience Section - now using ContentSection with cards */}
             <ContentSection
                 title="Work Experience"
                 backgroundColor="white"
@@ -113,14 +112,6 @@ export default function AboutUs() {
                 maxWidth="4xl"
                 variant="card"
                 cardItems={workExperienceCards}
-            />
-            {/* Education Section */}
-            <ContentSection
-                title="Education"
-                backgroundColor="white"
-                layout="centered"
-                maxWidth="4xl"
-                gridItems={education}
             />
         </div>
     );

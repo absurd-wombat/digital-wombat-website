@@ -1,9 +1,8 @@
 import { GridItem as GridItemType } from '@/app/lib/types';
+import { colors } from '@/app/lib/colors';
 
 interface GridItemProps {
   item: GridItemType;
-  textColor: string;
-  descriptionColor: string;
 }
 
 export const getGridClasses = (itemCount: number) => {
@@ -19,15 +18,15 @@ export const getGridClasses = (itemCount: number) => {
 };
 
 
-export default function GridItem({ item, textColor, descriptionColor }: GridItemProps) {
+export default function GridItem({ item }: GridItemProps) {
   return (
-    <div className="text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <div className={`text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 ${colors.background.card}`}>
       {item.icon && (
         <div className="mb-6">
           {typeof item.icon === 'string' ? (
-            <div className="text-4xl">{item.icon}</div>
+            <div className={`text-4xl ${colors.text.cardTitle}`}>{item.icon}</div>
           ) : (
-            <div className="w-16 h-16 bg-indigo-200 rounded-full flex items-center justify-center mx-auto text-indigo-600">
+            <div className={`w-16 h-16 ${colors.background.section.indigo} rounded-full flex items-center justify-center mx-auto ${colors.text.cardTitle}`}>
               {item.icon}
             </div>
           )}
@@ -35,13 +34,13 @@ export default function GridItem({ item, textColor, descriptionColor }: GridItem
       )}
       
       {item.title && (
-        <div className={`text-2xl font-bold mb-2 ${textColor}`}>
+        <div className={`text-2xl font-bold mb-2 ${colors.text.cardTitle}`}>
           {item.title}
         </div>
       )}
       
       {item.value && (
-        <div className={`text-lg font-semibold mb-4 ${textColor}`}>
+        <div className={`text-lg font-semibold mb-4 ${colors.text.cardTitle}`}>
           {item.value}
         </div>
       )}
