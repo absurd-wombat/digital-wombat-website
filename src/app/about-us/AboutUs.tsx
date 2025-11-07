@@ -65,25 +65,8 @@ export default function AboutUs() {
             location: '',
             details: []
         },
-        // Add more roles as needed
     ];
 
-    // Education data
-    const education = [
-        {
-            icon: '🎓',
-            title: 'MSc Computer Science',
-            description: 'University of Example, 2020–2022',
-        },
-        {
-            icon: '🎓',
-            title: 'BSc Mathematics',
-            description: 'University of Example, 2017–2020',
-        },
-        // Add more education as needed
-    ];
-
-    // Map workExperience to CardItem format for ContentSection
     const workExperienceCards = workExperience.map(role => ({
         icon: role.icon,
         title: role.title,
