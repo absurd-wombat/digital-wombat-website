@@ -47,6 +47,7 @@ export interface NavigationItem {
 // Navigation items for the header
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about-us' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Contact', href: '/contact' },
 ];
