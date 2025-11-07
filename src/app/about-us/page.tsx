@@ -7,7 +7,7 @@ export default function AboutUsPage() {
         <div className="min-h-screen">
             <HeroSection
                 title="About Us"
-                subtitle="Absurd Wombat is led by Ben Middleton, a software consultant at TNG Technology Consulting, specializing in delivering innovative and reliable technology solutions."
+                subtitle="Digital Wombat is led by Ben Middleton, a software consultant at TNG Technology Consulting, specializing in delivering innovative and reliable technology solutions."
                 description=""
                 backgroundColor="gradient"
                 layout="centered"
