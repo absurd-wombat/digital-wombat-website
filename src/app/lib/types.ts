@@ -30,6 +30,15 @@ export interface ButtonProps {
   className?: string;
 }
 
+export interface CardItem {
+  icon?: ReactNode;
+  title: string;
+  subtitle?: string;
+  description?: string;
+  details?: ReactNode | string[];
+  // Add more fields as needed for rich card content
+}
+
 export interface SectionProps {
   title: string;
   description?: string;
@@ -39,4 +48,6 @@ export interface SectionProps {
   className?: string;
   gridItems?: GridItem[];
   buttons?: ButtonProps[];
+  cardItems?: CardItem[];
+  variant?: 'grid' | 'card';
 }

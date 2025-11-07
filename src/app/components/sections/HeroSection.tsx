@@ -1,4 +1,4 @@
-import { SectionProps, ButtonProps, GridItem as GridItemType } from '@/app/lib/types';
+import { SectionProps, ButtonProps } from '@/app/lib/types';
 
 import { getBackgroundClass, getTextColor, getDescriptionColor, getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import Button from '@/app/components/ui/Button';
