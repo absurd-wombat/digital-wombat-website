@@ -57,14 +57,6 @@ export default function AboutUs() {
                 }
             ]
         },
-        {
-            icon: '💻',
-            title: 'Freelance Developer',
-            company: 'Various clients',
-            period: '2018–2022',
-            location: '',
-            details: []
-        },
     ];
 
     const workExperienceCards = workExperience.map(role => ({
@@ -86,6 +78,62 @@ export default function AboutUs() {
             : undefined
     }));
 
+    // Education data
+    const rawEducation = [
+        {
+            icon: '🎓',
+            title: 'MPhys Physics',
+            subtitle: 'University Of Oxford',
+            description: 'October 2018 - present',
+            details: [
+                {
+                    category: 'Final results',
+                    items: [
+                        'Passed with First Class Honours, final mark 82%',
+                        'Ranked 4 out of 97 students'
+                    ]
+                },
+                {
+                    category: 'Final year project',
+                    items: [
+                        'Machine Learning For Live-cell Super-resolution imaging',
+                        'Received a distinction for this piece of work',
+                        'Trained a neural network to improve the resolution of bacterial images taken with a light microscope.'
+                    ]
+                },
+                {
+                    category: 'Additional achievements',
+                    items: [
+                        'Distinction in preliminary examinations – 5th highest mark in the year of 177 students',
+                        'Distinction in second year examinations – 2nd highest mark in the year of 175 students',
+                        'Awarded “The Scott Prize” for performance in the Physics Second Year Examination',
+                        'First class in third year examinations – 2nd highest mark in the year of 157 students',
+                        'Awarded “The Gibbs prize” for performance in the MPhys Examination'
+                    ]
+                }
+            ]
+        }
+    ];
+
+    const educationCards = rawEducation.map(edu => ({
+        icon: edu.icon,
+        title: edu.title,
+        subtitle: edu.subtitle,
+        description: edu.description,
+        details: edu.details.length > 0
+            ? edu.details.map(detail => (
+                <div key={detail.category}>
+                    <span className="font-semibold">{detail.category}:</span>
+                    <ul className="list-disc ml-6">
+                        {detail.items.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+            : undefined
+    }));
+
     return (
         <div className="min-h-screen">
             <ContentSection
@@ -95,6 +143,14 @@ export default function AboutUs() {
                 maxWidth="7xl"
                 variant="card"
                 cardItems={workExperienceCards}
+            />
+            <ContentSection
+                title="Education"
+                backgroundColor="white"
+                layout="centered"
+                maxWidth="7xl"
+                variant="card"
+                cardItems={educationCards}
             />
         </div>
     );
