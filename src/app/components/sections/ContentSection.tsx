@@ -1,6 +1,6 @@
 import { SectionProps } from '@/app/lib/types';
 import { colors } from '@/app/lib/colors';
-import { getBackgroundClass, getTextColor, getDescriptionColor, getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
+import { getMaxWidthClass, getLayoutClass } from '@/app/lib/utils';
 import GridItem from '@/app/components/ui/GridItem';
 import Button from '@/app/components/ui/Button';
 
@@ -32,7 +32,7 @@ export default function ContentSection({
         {variant === 'card' && cardItems && cardItems.length > 0 && (
           <div className="max-w-6xl mx-auto flex flex-col gap-8 mb-12">
             {cardItems.map((card, index) => (
-              <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-2xl mx-auto`}>
+              <div key={index} className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-7xl mx-auto`}>
                 <div className="flex items-center mb-2">
                   {card.icon && <span className="text-3xl mr-3">{card.icon}</span>}
                   <span className={`text-xl font-semibold ${colors.text.cardTitle}`}>{card.title}</span>
@@ -61,8 +61,6 @@ export default function ContentSection({
               <GridItem
                 key={index}
                 item={item}
-                textColor={colors.text.default}
-                descriptionColor={colors.text.description}
               />
             ))}
           </div>

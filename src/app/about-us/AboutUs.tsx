@@ -109,7 +109,7 @@ export default function AboutUs() {
                 title="Work Experience"
                 backgroundColor="white"
                 layout="centered"
-                maxWidth="4xl"
+                maxWidth="7xl"
                 variant="card"
                 cardItems={workExperienceCards}
             />
