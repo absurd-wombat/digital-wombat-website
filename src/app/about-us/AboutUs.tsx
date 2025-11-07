@@ -63,7 +63,7 @@ export default function AboutUs() {
             icon: '🎓',
             title: 'MPhys Physics',
             subtitle: 'University Of Oxford',
-            description: 'October 2018 - present',
+            description: 'October 2018 - June 2023',
             details: [
                 {
                     category: 'Final results',
