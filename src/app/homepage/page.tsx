@@ -5,7 +5,7 @@ import { COMPANY_INFO } from '@/app/lib/constants';
 
 export default function Homepage() {
   const heroButtons = [
-    { text: "View Portfolio", href: "/portfolio", variant: "primary" as const },
+    { text: "About Us", href: "/about-us", variant: "primary" as const },
     { text: "Get In Touch", href: "/contact", variant: "secondary" as const }
   ];
 
