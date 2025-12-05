@@ -5,6 +5,10 @@ import { GridItem } from '@/app/lib/types';
 
 const servicesInfo = [
   {
+    title: "AI & Machine Learning",
+    description: "Cutting-edge AI solutions and machine learning models tailored to your business needs"
+  },
+  {
     title: "Web Development",
     description: "Modern, responsive websites and web applications built with cutting-edge technologies"
   },
@@ -16,10 +20,6 @@ const servicesInfo = [
     title: "Cloud Infrastructure",
     description: "Scalable cloud solutions and DevOps practices to ensure reliable, secure, and efficient operations"
   },
-  {
-    title: "Tech Consulting",
-    description: "Strategic technology guidance to help your business grow and scale efficiently"
-  }
 ];
 
 export default function ServicesSection() {
