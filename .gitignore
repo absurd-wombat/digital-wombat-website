@@ -32,6 +32,7 @@ src/firebase.ts
 # misc
 .DS_Store
 *.pem
+todos.txt
 
 # debug
 npm-debug.log*
