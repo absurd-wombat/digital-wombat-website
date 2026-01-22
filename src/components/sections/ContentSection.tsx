@@ -1,8 +1,8 @@
 import { SectionProps } from "@/lib/types";
 import { colors } from "@/lib/colors";
 import { getMaxWidthClass, getLayoutClass } from "@/lib/utils";
-import GridItem from "@/app/components/ui/GridItem";
-import Button from "@/app/components/ui/Button";
+import GridItem from "@/components/ui/GridItem";
+import Button from "@/components/ui/Button";
 
 type DetailObject = { category: string; items: string[] };
 

@@ -1,4 +1,4 @@
-import HeroSection from "@/app/components/sections/HeroSection";
+import HeroSection from "@/components/sections/HeroSection";
 import { contactInfo } from "@/lib/data/contact";
 import { GridItem } from "@/lib/types";
 

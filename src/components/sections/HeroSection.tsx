@@ -6,8 +6,8 @@ import {
   getMaxWidthClass,
   getLayoutClass,
 } from "@/lib/utils";
-import Button from "@/app/components/ui/Button";
-import GridItem, { getGridClasses } from "@/app/components/ui/GridItem";
+import Button from "@/components/ui/Button";
+import GridItem, { getGridClasses } from "@/components/ui/GridItem";
 
 interface HeroSectionProps extends SectionProps {
   subtitle?: string;

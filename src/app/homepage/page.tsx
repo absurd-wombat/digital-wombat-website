@@ -1,12 +1,12 @@
-import HeroSection from '@/app/components/sections/HeroSection';
-import ServicesSection from './ServicesSection';
-import ContactUsSection from '@/app/components/sections/ContactUsSection';
-import { COMPANY_INFO } from '@/lib/constants';
+import HeroSection from "@/components/sections/HeroSection";
+import ServicesSection from "./ServicesSection";
+import ContactUsSection from "@/components/sections/ContactUsSection";
+import { COMPANY_INFO } from "@/lib/constants";
 
 export default function Homepage() {
   const heroButtons = [
     { text: "About Us", href: "/about-us", variant: "primary" as const },
-    { text: "Get In Touch", href: "/contact", variant: "secondary" as const }
+    { text: "Get In Touch", href: "/contact", variant: "secondary" as const },
   ];
 
   return (
