@@ -1,6 +1,6 @@
 // src/app/components/ContactUsSection.tsx
-import ContentSection from './ContentSection';
-import { ButtonProps } from '@/app/lib/types';
+import ContentSection from "./ContentSection";
+import { ButtonProps } from "@/lib/types";
 
 interface ContactUsSectionProps {
   title?: string;
@@ -11,12 +11,12 @@ interface ContactUsSectionProps {
 export default function ContactUsSection({
   title = "Ready to Start Your Project?",
   description = "Let's discuss how we can help bring your vision to life with innovative technology solutions.",
-  button = { text: "Contact Us", href: "/contact", variant: "white" }
+  button = { text: "Contact Us", href: "/contact", variant: "white" },
 }: ContactUsSectionProps) {
   const buttons = [button];
 
   return (
-    <ContentSection 
+    <ContentSection
       title={title}
       description={description}
       buttons={buttons}

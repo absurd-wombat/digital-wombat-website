@@ -1,7 +1,7 @@
 import HeroSection from '@/app/components/sections/HeroSection';
 import ServicesSection from './ServicesSection';
 import ContactUsSection from '@/app/components/sections/ContactUsSection';
-import { COMPANY_INFO } from '@/app/lib/constants';
+import { COMPANY_INFO } from '@/lib/constants';
 
 export default function Homepage() {
   const heroButtons = [

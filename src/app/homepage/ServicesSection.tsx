@@ -1,6 +1,6 @@
 // src/app/homepage/ServicesSection.tsx
 import ContentSection from '@/app/components/sections/ContentSection';
-import { GridItem } from '@/app/lib/types';
+import { GridItem } from '@/lib/types';
 
 
 const servicesInfo = [

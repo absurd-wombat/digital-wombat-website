@@ -1,16 +1,26 @@
-import HeroSection from '@/app/components/sections/HeroSection';
-import { contactInfo } from '@/app/lib/data/contact';
-import { GridItem } from '@/app/lib/types';
+import HeroSection from "@/app/components/sections/HeroSection";
+import { contactInfo } from "@/lib/data/contact";
+import { GridItem } from "@/lib/types";
 
 export default function Contact() {
   const contactData: GridItem[] = contactInfo.map((contact) => ({
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={contact.svg} />
+      <svg
+        className="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d={contact.svg}
+        />
       </svg>
     ),
     title: contact.title,
-    value: contact.value
+    value: contact.value,
   }));
 
   return (
