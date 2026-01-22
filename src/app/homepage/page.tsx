@@ -1,5 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesSection from "./ServicesSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import ContactUsSection from "@/components/sections/ContactUsSection";
 import { COMPANY_INFO } from "@/lib/constants";
 
