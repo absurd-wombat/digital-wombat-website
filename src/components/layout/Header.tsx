@@ -1,13 +1,13 @@
 // src/components/layout/Header.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { NAVIGATION_ITEMS, COMPANY_INFO } from "@/lib/constants";
+import { NAVIGATION_ITEMS, COMPANY_INFO, LAYOUT } from "@/lib/constants";
 import { colors } from "@/lib/colors";
 
 export default function Header() {
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 ${colors.background.section.dark} shadow-lg border-b border-gray-700`}
+      className={`fixed top-0 left-0 right-0 z-50 ${LAYOUT.headerHeight} ${colors.background.section.dark} shadow-lg border-b border-gray-700`}
     >
       <div className="container mx-auto p-4 flex justify-between items-center">
         <Link
