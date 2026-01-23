@@ -13,7 +13,6 @@ interface HeroSectionProps extends SectionProps {
   subtitle?: string;
   primaryButton?: ButtonProps;
   secondaryButton?: ButtonProps;
-  fullHeight?: boolean;
 }
 
 export default function HeroSection({
@@ -23,16 +22,13 @@ export default function HeroSection({
   primaryButton,
   secondaryButton,
   gridItems,
-  fullHeight = false,
   backgroundColor = "gradient",
   layout = "centered",
   maxWidth = "4xl",
 }: HeroSectionProps) {
-  const heightClass = fullHeight ? "min-h-[calc(100vh-10rem)]" : "min-h-[60vh]";
-
   return (
     <section
-      className={`flex flex-col items-center justify-center ${getBackgroundClass(backgroundColor)} ${heightClass}`}
+      className={`flex flex-col items-center justify-center ${getBackgroundClass(backgroundColor)} min-h-[60vh]`}
     >
       <div
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}

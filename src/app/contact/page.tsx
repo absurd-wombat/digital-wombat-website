@@ -30,7 +30,6 @@ export default function ContactPage() {
         subtitle="Let's discuss your next project"
         description="Ready to bring your ideas to life? We're here to help with innovative solutions tailored to your needs."
         gridItems={contactData}
-        fullHeight={true}
         backgroundColor="gradient"
         maxWidth="6xl"
       />
