@@ -46,7 +46,18 @@ export default function GridItem({ item }: GridItemProps) {
 
       {item.value && (
         <div className={`text-lg font-semibold mb-4 ${colors.text.cardTitle}`}>
-          {item.value}
+          {item.href ? (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline hover:text-blue-600 transition-colors"
+            >
+              {item.value}
+            </a>
+          ) : (
+            item.value
+          )}
         </div>
       )}
     </div>

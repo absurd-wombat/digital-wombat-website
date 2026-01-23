@@ -21,6 +21,7 @@ export default function ContactPage() {
     ),
     title: contact.title,
     value: contact.value,
+    href: contact.value.startsWith("http") ? contact.value : undefined,
   }));
 
   return (

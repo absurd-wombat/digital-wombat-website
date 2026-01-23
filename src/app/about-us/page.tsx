@@ -1,6 +1,7 @@
 import ContactUsSection from "@/components/sections/ContactUsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import ContentSection from "@/components/sections/ContentSection";
+import { GITHUB_URL, LINKEDIN_URL } from "@/lib/data/contact";
 
 export default function AboutUsPage() {
   const workExperience = [
@@ -106,12 +107,12 @@ export default function AboutUsPage() {
         maxWidth="4xl"
         primaryButton={{
           text: "GitHub",
-          href: "https://github.com/absurd-wombat",
+          href: GITHUB_URL,
           variant: "primary",
         }}
         secondaryButton={{
           text: "LinkedIn",
-          href: "https://www.linkedin.com/in/benjamin-middleton-a8370b14a/",
+          href: LINKEDIN_URL,
           variant: "secondary",
         }}
       />
