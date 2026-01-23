@@ -19,6 +19,21 @@ export default function Button({
       "border-2 border-white text-white hover:bg-white hover:text-indigo-600",
   };
 
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} ${variantClasses[variant]} ${className || ""}`}
+      >
+        {text}
+      </a>
+    );
+  }
+
   return (
     <Link
       href={href}
