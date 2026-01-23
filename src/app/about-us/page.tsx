@@ -8,38 +8,37 @@ export default function AboutUsPage() {
       icon: "💼",
       title: "Software Consultant",
       company: "TNG Technology Consulting · Full-time",
-      period: "Oct 2023 to Present · 2 yrs 2 mos",
+      period: "Oct 2023 to Present",
       location: "Munich, Bavaria, Germany · Hybrid",
       details: [
         {
-          category: "Cloud Infrastructure & DevOps",
-          items: [
-            "Manage and optimize AWS infrastructure and Kubernetes clusters in AWS EKS.",
-            "Implement and maintain Identity and Access Management (IAM) including SSO for multiple AWS accounts.",
-            "Automate deployments using Tekton Pipelines.",
-            "Utilize Infrastructure as Code (IaC) with Terraform, Helm, and Helmfile.",
-            "Oversee container applications with k9s.",
-          ],
-        },
-        {
           category: "Backend Development",
           items: [
-            "Develop internal applications and REST APIs in Python3 to support various departments.",
-            "Create internal automation tools and REST APIs in Go for infrastructure and compliance.",
+            "Develop internal applications and REST APIs in Python3 to support multiple departments.",
+            "Create internal automation tools and REST APIs in Go.",
           ],
         },
         {
           category: "Frontend Development",
           items: [
             "Develop internal self-service portals and applications using TypeScript, React, and Material-UI.",
+            "Led the migration of ~20,000 lines of TypeScript/React code to more modern frameworks using AI agents to accelerate refactoring and improve maintainability.",
+          ],
+        },
+        {
+          category: "Cloud Infrastructure & DevOps",
+          items: [
+            "Manage and optimize AWS infrastructure and Kubernetes clusters in AWS EKS.",
+            "Design and maintain CI/CD pipelines using Tekton and Github Actions.",
+            "Provision and manage infrastructure using Infrastructure as Code (IaC) with Terraform, Helm, and Helmfile.",
+            "Operate and monitor containerized applications using k9s.",
           ],
         },
         {
           category: "SSO & Security",
           items: [
-            "Continuously develop and manage a company-wide SSO solution for over 800 users.",
-            "Operate Keycloak as the central entry point for internal and external services.",
-            "Implement Configuration as Code for Keycloak configuration via Terraform.",
+            "Operate Keycloak as the central authentication and authorization platform for internal and external services.",
+            "Maintain a company-wide SSO solution supporting over 800 users.",
           ],
         },
         {
@@ -70,25 +69,25 @@ export default function AboutUsPage() {
         {
           category: "Final results",
           items: [
-            "Passed with First Class Honours, final mark 82%",
-            "Ranked 4 out of 97 students",
+            "Passed with First Class Honours, final mark 82%.",
+            "Ranked 4 out of 97 students.",
           ],
         },
         {
           category: "Final year project",
           items: [
-            "Machine Learning For Live-cell Super-resolution imaging",
-            "Received a distinction for this piece of work",
-            "Trained a neural network to improve the resolution of bacterial images taken with a light microscope.",
+            "Title: Machine Learning For Live-cell Super-resolution Imaging.",
+            "Retrained a neural network to improve the resolution of bacterial images taken with a light microscope. The system made use of a Generative Adversarial Network (GAN) which trained a U-net generator against a Convolutional Neural Network discriminator.",
+            "Received a distinction for this piece of work.",
           ],
         },
         {
           category: "Additional achievements",
           items: [
             "Distinction in preliminary examinations – 5th highest mark in the year of 177 students",
-            "Distinction in second year examinations – 2nd highest mark in the year of 175 students",
-            'Awarded "The Scott Prize" for performance in the Physics Second Year Examination',
-            "First class in third year examinations – 2nd highest mark in the year of 157 students",
+            "Distinction in second year examinations – 2nd highest mark in the year of 175 students.",
+            'Awarded "The Scott Prize" for performance in the Physics Second Year Examination.',
+            "First class in third year examinations – 2nd highest mark in the year of 157 students.",
             'Awarded "The Gibbs prize" for performance in the MPhys Examination',
           ],
         },
