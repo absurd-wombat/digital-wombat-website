@@ -28,7 +28,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`flex flex-col items-center justify-center ${getBackgroundClass(backgroundColor)} min-h-[60vh]`}
+      className={`flex flex-col items-center ${getBackgroundClass(backgroundColor)} min-h-[60vh] py-16 md:py-24`}
     >
       <div
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
