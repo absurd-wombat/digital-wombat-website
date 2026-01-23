@@ -51,8 +51,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 
 // Layout constants
 export const LAYOUT = {
-  headerHeight: "h-36", // 144px - adjust this value to match your header's actual height
-  headerPadding: "pt-36", // Must match headerHeight
+  headerHeight: "min-h-[100px] md:min-h-36", // Responsive header height: 100px mobile, 144px (h-36) desktop
+  headerPadding: "pt-[100px] md:pt-36", // Must match headerHeight
 };
 
 // Company information
