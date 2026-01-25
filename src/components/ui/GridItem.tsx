@@ -20,7 +20,7 @@ export const getGridClasses = (itemCount: number) => {
 export default function GridItem({ item }: GridItemProps) {
   return (
     <div
-      className={`text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 ${colors.background.card}`}
+      className={`text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 w-full min-h-[200px] flex flex-col justify-center overflow-hidden ${colors.background.card}`}
     >
       {item.icon && (
         <div className="mb-6">
@@ -45,7 +45,9 @@ export default function GridItem({ item }: GridItemProps) {
       )}
 
       {item.value && (
-        <div className={`text-lg font-semibold mb-4 ${colors.text.cardTitle}`}>
+        <div
+          className={`text-lg font-semibold mb-4 break-words ${colors.text.cardTitle}`}
+        >
           {item.href ? (
             <a
               href={item.href}
