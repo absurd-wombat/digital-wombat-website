@@ -23,11 +23,11 @@ export default function Header() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/wombat.svg"
-              width={60}
-              height={60}
+              src="/Logo4.png"
+              width={80}
+              height={80}
               alt="logo"
-              className="md:w-[100px] md:h-[100px]"
+              className="md:w-[140px] md:h-[140px]"
             />
             <h1
               className={`text-2xl md:text-5xl font-bold ml-2 md:ml-4 ${colors.text.white}`}
