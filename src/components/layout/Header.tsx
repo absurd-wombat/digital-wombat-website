@@ -19,10 +19,10 @@ export default function Header() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/Logo4.png"
+              src="/logo.png"
               width={40}
               height={40}
-              alt="logo"
+              alt="Digital Wombat logo"
               className="w-10 h-10"
             />
             <h1 className="text-lg font-semibold tracking-tight text-gray-900 ml-3">
