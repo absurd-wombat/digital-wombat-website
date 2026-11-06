@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ButtonProps } from "@/lib/types";
-import { colors } from "@/lib/colors";
 
 export default function Button({
   text,
@@ -9,14 +8,14 @@ export default function Button({
   className,
 }: ButtonProps) {
   const baseClasses =
-    "px-8 py-3 rounded-lg font-semibold transition-all duration-200 inline-block text-center";
+    "inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 text-center";
 
   const variantClasses = {
-    primary: `${colors.background.section.dark} ${colors.text.white} hover:bg-indigo-700 hover:scale-105`,
-    secondary: `border-2 border-indigo-600 ${colors.text.cardTitle} hover:bg-indigo-600 hover:${colors.text.white}`,
-    white: `${colors.background.default} ${colors.text.cardTitle} hover:bg-gray-100 hover:scale-105`,
+    primary: "bg-indigo-600 text-white hover:bg-indigo-500",
+    secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
+    white: "bg-white text-gray-900 hover:bg-gray-100",
     outline:
-      "border-2 border-white text-white hover:bg-white hover:text-indigo-600",
+      "border border-white/40 text-white hover:border-white hover:bg-white/10",
   };
 
   const isExternal = href.startsWith("http://") || href.startsWith("https://");

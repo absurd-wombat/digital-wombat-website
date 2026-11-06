@@ -20,7 +20,7 @@ export const getGridClasses = (itemCount: number) => {
 export default function GridItem({ item }: GridItemProps) {
   return (
     <div
-      className={`text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 w-full min-h-[200px] flex flex-col justify-center overflow-hidden ${colors.background.card}`}
+      className={`text-center p-6 ${colors.card.container} hover:shadow-md transition-shadow duration-300 w-full min-h-[200px] flex flex-col justify-center overflow-hidden`}
     >
       {item.icon && (
         <div className="mb-6">

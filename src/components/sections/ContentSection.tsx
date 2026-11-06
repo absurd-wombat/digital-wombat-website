@@ -117,7 +117,7 @@ export default function ContentSection({
               {displayCardItems.map((card, index) => (
                 <div
                   key={index}
-                  className={`${colors.background.card} rounded-lg shadow p-6 w-full max-w-7xl mx-auto text-left`}
+                  className={`${colors.card.container} p-6 md:p-8 w-full max-w-7xl mx-auto text-left`}
                 >
                   <div className="flex items-center mb-2 justify-start">
                     {card.icon && (

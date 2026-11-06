@@ -17,6 +17,9 @@ export const colors = {
     accentSoft: "bg-indigo-50",
     accent: "bg-indigo-600",
   },
+  card: {
+    container: "rounded-2xl border border-gray-200 bg-white shadow-sm",
+  },
   text: {
     default: "text-gray-900",
     heading: "text-gray-900",
