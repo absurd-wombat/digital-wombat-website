@@ -153,7 +153,6 @@ export default function AboutUsPage() {
         backgroundColor="white"
         layout="centered"
         maxWidth="7xl"
-        variant="card"
         cards={workExperience}
       />
       <ContentSection
@@ -161,7 +160,6 @@ export default function AboutUsPage() {
         backgroundColor="white"
         layout="centered"
         maxWidth="7xl"
-        variant="card"
         cards={Education}
       />
       <ContactUsSection />
