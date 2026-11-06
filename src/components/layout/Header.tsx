@@ -25,19 +25,19 @@ export default function Header() {
               alt="Digital Wombat logo"
               className="w-10 h-10"
             />
-            <h1 className="text-lg font-semibold tracking-tight text-gray-900 ml-3">
+            <h1 className="text-xl font-semibold tracking-tight text-gray-900 ml-3">
               {COMPANY_INFO.name}
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex items-center space-x-2">
+            <ul className="flex items-center gap-1">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap"
+                    className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap"
                   >
                     {item.name}
                   </Link>
@@ -78,7 +78,7 @@ export default function Header() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100"
+                    className="block text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
