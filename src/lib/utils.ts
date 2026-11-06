@@ -6,15 +6,11 @@ export function getBackgroundClass(backgroundColor: string): string {
 }
 
 export function getHeadingClass(backgroundColor: string): string {
-  return backgroundColor === "dark" || backgroundColor === "indigo"
-    ? "text-white"
-    : "text-gray-900";
+  return backgroundColor === "dark" ? "text-white" : "text-gray-900";
 }
 
 export function getDescriptionClass(backgroundColor: string): string {
-  return backgroundColor === "dark" || backgroundColor === "indigo"
-    ? "text-gray-300"
-    : "text-gray-600";
+  return backgroundColor === "dark" ? "text-gray-300" : "text-gray-600";
 }
 
 export function getMaxWidthClass(maxWidth: string): string {

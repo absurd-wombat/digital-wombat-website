@@ -6,7 +6,8 @@ export const colors = {
       white: "bg-white",
       gray: "bg-gray-50",
       dark: "bg-gray-900",
-      indigo: "bg-indigo-600",
+      indigo:
+        "bg-[radial-gradient(ellipse_75%_90%_at_50%_50%,rgba(199,210,254,0.55),transparent_75%)]",
     },
     accentSoft: "bg-indigo-50",
   },
