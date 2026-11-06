@@ -92,7 +92,7 @@ export default function ContentSection({
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >
         <h2
-          className={`text-4xl md:text-5xl font-bold mb-8 ${colors.text.heading}`}
+          className={`text-3xl md:text-4xl font-bold tracking-tight mb-8 ${colors.text.heading}`}
         >
           {title}
         </h2>

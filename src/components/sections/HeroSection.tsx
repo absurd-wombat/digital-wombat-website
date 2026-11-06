@@ -34,20 +34,20 @@ export default function HeroSection({
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >
         <h1
-          className={`text-5xl md:text-7xl font-bold mb-8 ${colors.text.heading}`}
+          className={`text-4xl md:text-6xl font-bold tracking-tight mb-6 ${colors.text.heading}`}
         >
           {title}
         </h1>
         {subtitle && (
           <p
-            className={`text-xl md:text-2xl mb-6 ${colors.text.description} max-w-3xl mx-auto`}
+            className={`text-lg md:text-xl mb-4 ${colors.text.description} max-w-3xl mx-auto`}
           >
             {subtitle}
           </p>
         )}
         {description && (
           <p
-            className={`text-lg md:text-xl mb-12 ${colors.text.description} max-w-2xl mx-auto`}
+            className={`text-base md:text-lg mb-10 ${colors.text.description} max-w-2xl mx-auto`}
           >
             {description}
           </p>

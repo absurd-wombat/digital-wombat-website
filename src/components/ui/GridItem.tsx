@@ -39,7 +39,7 @@ export default function GridItem({ item }: GridItemProps) {
       )}
 
       {item.title && (
-        <div className={`text-2xl font-bold mb-2 ${colors.text.cardTitle}`}>
+        <div className={`text-xl font-semibold tracking-tight mb-2 ${colors.text.cardTitle}`}>
           {item.title}
         </div>
       )}
