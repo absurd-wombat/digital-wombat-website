@@ -1,18 +1,8 @@
 import { ReactNode } from "react";
 
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  gradient: string;
-  technologies: string[];
+export interface NavigationItem {
+  name: string;
   href: string;
-}
-
-export interface Stat {
-  value: string;
-  label: string;
 }
 
 export interface GridItem {
