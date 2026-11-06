@@ -30,10 +30,10 @@ export default function HeroSection({
     <section
       className={`relative isolate overflow-hidden flex flex-col items-center ${getBackgroundClass(backgroundColor)} py-20 md:py-28`}
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-indigo-200/60 blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-pink-200/50 blur-3xl" />
-      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(420px_280px_at_5%_0%,rgba(199,210,254,0.55),transparent_65%),radial-gradient(420px_280px_at_95%_0%,rgba(251,207,232,0.45),transparent_65%)]"
+      />
       <div
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >
