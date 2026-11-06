@@ -15,20 +15,24 @@ export function getButtonClasses(variant: string, backgroundColor?: string): str
   export function getBackgroundClass(backgroundColor: string): string {
     switch (backgroundColor) {
       case 'gray': return 'bg-gray-50';
+      case 'dark': return 'bg-gray-900';
       case 'indigo': return 'bg-indigo-600';
-      case 'gradient': return 'bg-gradient-to-br from-blue-50 to-indigo-100';
       default: return 'bg-white';
     }
   }
   
-  export function getTextColor(backgroundColor: string): string {
-    return backgroundColor === 'indigo' ? 'text-white' : 'text-gray-800';
+  export function getHeadingClass(backgroundColor: string): string {
+    return backgroundColor === 'dark' || backgroundColor === 'indigo'
+      ? 'text-white'
+      : 'text-gray-900';
   }
-  
-  export function getDescriptionColor(backgroundColor: string): string {
-    return backgroundColor === 'indigo' ? 'text-indigo-100' : 'text-gray-600';
+
+  export function getDescriptionClass(backgroundColor: string): string {
+    return backgroundColor === 'dark' || backgroundColor === 'indigo'
+      ? 'text-gray-300'
+      : 'text-gray-600';
   }
-  
+
   export function getMaxWidthClass(maxWidth: string): string {
     switch (maxWidth) {
       case '4xl': return 'max-w-4xl';

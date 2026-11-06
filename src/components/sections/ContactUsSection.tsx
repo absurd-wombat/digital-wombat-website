@@ -20,7 +20,7 @@ export default function ContactUsSection({
       title={title}
       description={description}
       buttons={buttons}
-      backgroundColor="indigo"
+      backgroundColor="dark"
       maxWidth="4xl"
     />
   );

@@ -1,6 +1,11 @@
 import { SectionProps } from "@/lib/types";
 import { colors } from "@/lib/colors";
-import { getMaxWidthClass, getLayoutClass } from "@/lib/utils";
+import {
+  getMaxWidthClass,
+  getLayoutClass,
+  getHeadingClass,
+  getDescriptionClass,
+} from "@/lib/utils";
 import GridItem from "@/components/ui/GridItem";
 import Button from "@/components/ui/Button";
 
@@ -92,14 +97,14 @@ export default function ContentSection({
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >
         <h2
-          className={`text-3xl md:text-4xl font-bold tracking-tight mb-8 ${colors.text.heading}`}
+          className={`text-3xl md:text-4xl font-bold tracking-tight mb-8 ${getHeadingClass(backgroundColor)}`}
         >
           {title}
         </h2>
 
         {description && (
           <p
-            className={`text-xl mb-12 leading-relaxed ${colors.text.description}`}
+            className={`text-xl mb-12 leading-relaxed ${getDescriptionClass(backgroundColor)}`}
           >
             {description}
           </p>

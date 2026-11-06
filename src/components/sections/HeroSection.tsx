@@ -22,14 +22,18 @@ export default function HeroSection({
   primaryButton,
   secondaryButton,
   gridItems,
-  backgroundColor = "gradient",
+  backgroundColor = "white",
   layout = "centered",
   maxWidth = "4xl",
 }: HeroSectionProps) {
   return (
     <section
-      className={`flex flex-col items-center ${getBackgroundClass(backgroundColor)} min-h-[60vh] py-16 md:py-24`}
+      className={`relative isolate overflow-hidden flex flex-col items-center ${getBackgroundClass(backgroundColor)} py-20 md:py-28`}
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-indigo-200/60 blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-pink-200/50 blur-3xl" />
+      </div>
       <div
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >

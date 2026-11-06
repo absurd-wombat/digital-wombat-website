@@ -31,7 +31,7 @@ export default function ContactPage() {
         subtitle="Let's discuss your next project"
         description="Ready to bring your ideas to life? We're here to help with innovative solutions tailored to your needs."
         gridItems={contactData}
-        backgroundColor="gradient"
+        backgroundColor="white"
         maxWidth="6xl"
       />
     </div>

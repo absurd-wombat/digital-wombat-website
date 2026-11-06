@@ -43,7 +43,7 @@ export interface CardItem {
 export interface SectionProps {
   title: string;
   description?: string;
-  backgroundColor?: "white" | "gray" | "dark" | "indigo" | "gradient";
+  backgroundColor?: "white" | "gray" | "dark" | "indigo";
   layout?: "centered" | "left" | "right";
   maxWidth?:
     | "sm"

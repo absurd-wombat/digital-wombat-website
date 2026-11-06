@@ -134,7 +134,7 @@ export default function AboutUsPage() {
         title="About Us"
         subtitle="Digital Wombat is led by Ben Middleton, a software consultant at TNG Technology Consulting. This page outlines Ben's academic and professional career and experience."
         description=""
-        backgroundColor="gradient"
+        backgroundColor="white"
         layout="centered"
         maxWidth="4xl"
         primaryButton={{
