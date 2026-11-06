@@ -8,8 +8,26 @@ export default function AboutUsPage() {
     {
       icon: "💼",
       title: "Software Consultant",
-      company: "TNG Technology Consulting · Full-time",
-      period: "Oct 2023 to Present",
+      company: "TNG Technology Consulting UK",
+      period: "Aug 2026 to Present",
+      location: "Oxford, UK",
+      details: [
+        {
+          category: "AI Engineering & Sovereign Infrastructure",
+          items: [
+            "Built and deployed a self-hosted LLM inference platform providing OpenAI-compatible access to open-source models on company infrastructure, keeping sensitive data within EU jurisdiction.",
+            "Developed an LLM gateway/router using Bifrost, integrating model inference, authentication, usage controls and internal infrastructure into a unified API.",
+            "Built the platform's user and usage-management system, including a FastAPI backend and React/TypeScript frontend, enabling users to provision access and monitor consumption.",
+            "Agentic-first software development, extensively using Opencode and Cursor.",
+          ],
+        },
+      ],
+    },
+    {
+      icon: "💻",
+      title: "Software Consultant",
+      company: "TNG Technology Consulting",
+      period: "Oct 2023 to Jul 2026",
       location: "Munich, Bavaria, Germany · Hybrid",
       details: [
         {
@@ -35,25 +53,39 @@ export default function AboutUsPage() {
             "Operate and monitor containerized applications using k9s.",
           ],
         },
+      ],
+    },
+    {
+      icon: "🚣",
+      title: "Sales Representative and River Tour Guide",
+      company: "Scudamore's Punting Company",
+      period: "Jan 2023 to Sep 2023",
+      location: "Cambridge, UK",
+      details: [
         {
-          category: "SSO & Security",
+          category: "Highlights",
           items: [
-            "Operate Keycloak as the central authentication and authorization platform for internal and external services.",
-            "Maintain a company-wide SSO solution supporting over 800 users.",
+            "Delivered over 1,500 polished 45-minute presentations to groups of 2–24 customers.",
+            "Consistently ranked as a top salesperson, generating £4,000+ per week in revenue.",
+            "Converted cold leads in a highly competitive, high-pressure sales environment with multiple rival operators.",
           ],
         },
+      ],
+    },
+    {
+      icon: "🌬️",
+      title: "Year In Industry: Engineering Intern",
+      company: "Breathing Buildings",
+      period: "Sep 2017 to Apr 2018",
+      location: "Cambridge, UK",
+      details: [
         {
-          category: "Network & System Administration",
+          category: "Highlights",
           items: [
-            "Administer network infrastructure, server management, and modern firewall management across multiple locations.",
-            "Server configuration and provisioning with Ansible.",
-            "Manage various internal systems and tools: LDAP, VPN, DNS, PGP and cloud access control system.",
-          ],
-        },
-        {
-          category: "Team Collaboration & Knowledge Sharing",
-          items: [
-            "Onboard new team members and foster knowledge dissemination within the team.",
+            "Designed ventilation strategies for schools and non-domestic buildings, contributing to 100+ projects and approximately £1.5m in revenue.",
+            "Used thermal modelling software daily and contributed code improvements to internal tools.",
+            "Collaborated closely with sales and clients, attending sales meetings and producing technical and marketing materials.",
+            "Awarded Employee of the Season for the second half of the placement.",
           ],
         },
       ],
@@ -63,9 +95,9 @@ export default function AboutUsPage() {
   const Education = [
     {
       icon: "🎓",
-      title: "MPhys Physics",
+      title: "MPhys Master of Physics",
       subtitle: "University Of Oxford",
-      description: "October 2018 - June 2023",
+      description: "October 2018 - June 2022",
       details: [
         {
           category: "Final results",
@@ -85,11 +117,11 @@ export default function AboutUsPage() {
         {
           category: "Additional achievements",
           items: [
-            "Distinction in preliminary examinations – 5th highest mark in the year of 177 students",
-            "Distinction in second year examinations – 2nd highest mark in the year of 175 students.",
+            "Distinction in preliminary examinations – rank 5 out of 177 students.",
+            "Distinction in second year examinations – rank 2 out of 175 students.",
             'Awarded "The Scott Prize" for performance in the Physics Second Year Examination.',
-            "First class in third year examinations – 2nd highest mark in the year of 157 students.",
-            'Awarded "The Gibbs prize" for performance in the MPhys Examination',
+            "First class in third year examinations – rank 2 out of 157 students.",
+            'Awarded "The Gibbs prize" for performance in the MPhys Examination.',
           ],
         },
       ],
