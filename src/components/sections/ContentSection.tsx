@@ -90,14 +90,14 @@ export default function ContentSection({
 
         {cards && cards.length > 0 && (
           <div className="max-w-6xl mx-auto flex flex-col gap-8 mb-12">
-            {cards.map((card) => {
+            {cards.map((card, index) => {
               const subtitle =
                 card.subtitle ||
                 `${card.company || ""}${card.location ? ` · ${card.location}` : ""}`;
               const description = card.description || card.period || "";
               return (
                 <div
-                  key={card.title}
+                  key={index}
                   className={`${colors.card.container} p-6 md:p-8 w-full max-w-7xl mx-auto text-left`}
                 >
                   <div className="flex items-center mb-2 justify-start">
