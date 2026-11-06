@@ -5,17 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { NAVIGATION_ITEMS, COMPANY_INFO, LAYOUT } from "@/lib/constants";
-import { colors } from "@/lib/colors";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 ${colors.background.section.dark} shadow-lg border-b border-gray-700`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/80">
       <div
-        className={`container mx-auto p-4 ${LAYOUT.headerHeight} flex flex-col justify-center`}
+        className={`container mx-auto px-4 ${LAYOUT.headerHeight} flex flex-col justify-center`}
       >
         <div className="flex justify-between items-center">
           <Link
@@ -24,26 +21,24 @@ export default function Header() {
           >
             <Image
               src="/Logo4.png"
-              width={80}
-              height={80}
+              width={40}
+              height={40}
               alt="logo"
-              className="md:w-[140px] md:h-[140px]"
+              className="w-10 h-10"
             />
-            <h1
-              className={`text-2xl md:text-5xl font-bold ml-2 md:ml-4 ${colors.text.white}`}
-            >
+            <h1 className="text-lg font-semibold tracking-tight text-gray-900 ml-3">
               {COMPANY_INFO.name}
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex items-center space-x-6">
+            <ul className="flex items-center space-x-2">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className={`text-2xl font-medium text-gray-300 hover:${colors.text.white} transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-800 whitespace-nowrap`}
+                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap"
                   >
                     {item.name}
                   </Link>
@@ -54,7 +49,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-300 hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -78,13 +73,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4">
-            <ul className="flex flex-col space-y-2">
+          <nav className="md:hidden pt-4 pb-2">
+            <ul className="flex flex-col space-y-1">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className={`block text-xl font-medium text-gray-300 hover:${colors.text.white} transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-800`}
+                    className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 px-3 py-2 rounded-md hover:bg-gray-100"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
