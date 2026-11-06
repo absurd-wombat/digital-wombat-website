@@ -30,7 +30,7 @@ export default function GridItem({ item }: GridItemProps) {
             </div>
           ) : (
             <div
-              className={`w-16 h-16 ${colors.background.accentSoft} rounded-full flex items-center justify-center mx-auto ${colors.text.heading}`}
+              className={`w-16 h-16 ${colors.background.accentSoft} rounded-full flex items-center justify-center mx-auto ${colors.text.cardTitle}`}
             >
               {item.icon}
             </div>

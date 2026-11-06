@@ -1,13 +1,14 @@
 import { SectionProps } from "@/lib/types";
 import { colors } from "@/lib/colors";
 import {
+  getBackgroundClass,
   getMaxWidthClass,
   getLayoutClass,
   getHeadingClass,
   getDescriptionClass,
 } from "@/lib/utils";
-import GridItem from "@/components/ui/GridItem";
-import Button from "@/components/ui/Button";
+import GridItem, { getGridClasses } from "@/components/ui/GridItem";
+import ButtonRow from "@/components/ui/ButtonRow";
 
 interface DetailObject {
   category: string;
@@ -68,7 +69,7 @@ export default function ContentSection({
 }: ContentSectionProps) {
   return (
     <section
-      className={`py-20 ${colors.background.section[backgroundColor] || colors.background.default} ${className || ""}`}
+      className={`py-20 ${getBackgroundClass(backgroundColor)} ${className || ""}`}
     >
       <div
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
@@ -129,20 +130,14 @@ export default function ContentSection({
         )}
 
         {gridItems && gridItems.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className={`${getGridClasses(gridItems.length)} mb-12`}>
             {gridItems.map((item, index) => (
               <GridItem key={index} item={item} />
             ))}
           </div>
         )}
 
-        {buttons && buttons.length > 0 && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {buttons.map((button, index) => (
-              <Button key={index} {...button} />
-            ))}
-          </div>
-        )}
+        {buttons && <ButtonRow buttons={buttons} />}
       </div>
     </section>
   );

@@ -5,8 +5,9 @@ import {
   getBackgroundClass,
   getMaxWidthClass,
   getLayoutClass,
+  getHeadingClass,
 } from "@/lib/utils";
-import Button from "@/components/ui/Button";
+import ButtonRow from "@/components/ui/ButtonRow";
 import GridItem, { getGridClasses } from "@/components/ui/GridItem";
 
 interface HeroSectionProps extends SectionProps {
@@ -38,7 +39,7 @@ export default function HeroSection({
         className={`${getMaxWidthClass(maxWidth)} mx-auto px-6 ${getLayoutClass(layout)}`}
       >
         <h1
-          className={`text-4xl md:text-6xl font-bold tracking-tight mb-6 ${colors.text.heading}`}
+          className={`text-4xl md:text-6xl font-bold tracking-tight mb-6 ${getHeadingClass(backgroundColor)}`}
         >
           {title}
         </h1>
@@ -66,10 +67,11 @@ export default function HeroSection({
         )}
 
         {(primaryButton || secondaryButton) && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {primaryButton && <Button {...primaryButton} />}
-            {secondaryButton && <Button {...secondaryButton} />}
-          </div>
+          <ButtonRow
+            buttons={[primaryButton, secondaryButton].filter(
+              (button): button is ButtonProps => button !== undefined,
+            )}
+          />
         )}
       </div>
     </section>
