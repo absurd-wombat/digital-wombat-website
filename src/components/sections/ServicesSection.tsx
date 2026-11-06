@@ -1,4 +1,3 @@
-// src/app/homepage/ServicesSection.tsx
 import ContentSection from "@/components/sections/ContentSection";
 import { GridItem } from "@/lib/types";
 

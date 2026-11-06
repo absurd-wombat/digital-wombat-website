@@ -1,5 +1,4 @@
-// src/app/components/ContactUsSection.tsx
-import ContentSection from "./ContentSection";
+import ContentSection from "@/components/sections/ContentSection";
 import { ButtonProps } from "@/lib/types";
 
 interface ContactUsSectionProps {
